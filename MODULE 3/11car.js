@@ -1,0 +1,28 @@
+let fs = require("fs");
+let data = fs.readFileSync("11car.txt", 'utf-8');
+let idx = 0;
+data = data.split('\n');
+
+function readLine() {
+  idx++;
+  return data[idx - 1];
+}
+class Car{
+    
+    constructor(a="Audi",b="A4"){
+        this.name=a;
+        this.model= b;
+    }
+}
+// DO NOT CHANGE ANYTHING BELOW THIS LINE
+let flag = parseInt(readLine());
+if (flag === 1){
+  let inputString = readLine().split(' ');
+  vehicle = new Car(inputString[0], inputString[1]);
+}
+else{
+  vehicle = new Car();
+}
+
+console.log(vehicle.name);
+console.log(vehicle.model);
